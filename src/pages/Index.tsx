@@ -5,6 +5,17 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 
 const Index = () => {
+  const scrollToContact = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const contactSection = document.querySelector('#contact');
+    if (contactSection) {
+      window.scrollTo({
+        top: contactSection.getBoundingClientRect().top + window.scrollY - 80,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -20,11 +31,11 @@ const Index = () => {
               Computer Science Student at University of Calgary
             </p>
             <div className="flex gap-4">
-              <Button>
+              <Button onClick={scrollToContact}>
                 <Mail className="mr-2 h-4 w-4" />
                 Contact Me
               </Button>
-              <Button variant="outline">
+              <Button variant="outline" onClick={() => window.open('https://github.com/your-username', '_blank')}>
                 <Github className="mr-2 h-4 w-4" />
                 GitHub
               </Button>
@@ -148,11 +159,11 @@ const Index = () => {
                 or just want to say hi, feel free to reach out!
               </p>
               <div className="flex gap-4">
-                <Button>
+                <Button onClick={() => window.location.href = 'mailto:your-email@example.com'}>
                   <Mail className="mr-2 h-4 w-4" />
                   Email Me
                 </Button>
-                <Button variant="outline">
+                <Button variant="outline" onClick={() => window.open('https://linkedin.com/in/your-profile', '_blank')}>
                   <Linkedin className="mr-2 h-4 w-4" />
                   LinkedIn
                 </Button>
