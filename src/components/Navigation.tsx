@@ -15,6 +15,23 @@ const Navigation = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
+  const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    
+    // Close mobile menu if open
+    if (isOpen) {
+      setIsOpen(false);
+    }
+    
+    const element = document.querySelector(href);
+    if (element) {
+      window.scrollTo({
+        top: element.getBoundingClientRect().top + window.scrollY - 80, // 80px offset for navbar height
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <nav className="fixed w-full bg-background/80 backdrop-blur-sm z-50 border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,6 +48,7 @@ const Navigation = () => {
                   key={item.name}
                   href={item.href}
                   className="text-foreground hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium"
+                  onClick={(e) => handleScrollToSection(e, item.href)}
                 >
                   {item.name}
                 </a>
@@ -63,7 +81,7 @@ const Navigation = () => {
                 key={item.name}
                 href={item.href}
                 className="text-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => handleScrollToSection(e, item.href)}
               >
                 {item.name}
               </a>
