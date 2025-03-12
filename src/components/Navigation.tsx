@@ -30,7 +30,7 @@ const Navigation = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-secondary-foreground hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-foreground hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium"
                 >
                   {item.name}
                 </a>
@@ -62,7 +62,7 @@ const Navigation = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-secondary-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
+                className="text-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
