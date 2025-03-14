@@ -1,3 +1,4 @@
+
 import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
@@ -40,6 +41,33 @@ const Index = () => {
       githubLink: "https://github.com/your-username/ecommerce",
       demoLink: "https://your-ecommerce-url.com",
     },
+  ];
+
+  const experiences = [
+    {
+      id: 1,
+      company: "Nude Solutions",
+      position: "Junior Product Development Intern",
+      duration: "May 2023 - Present",
+      responsibilities: [
+        "Developed and maintained responsive web applications using React, TypeScript, and Laravel",
+        "Collaborated with cross-functional teams to implement new features and fix bugs",
+        "Participated in code reviews and improved code quality through unit tests and documentation",
+        "Optimized application performance by identifying and resolving bottlenecks"
+      ]
+    },
+    {
+      id: 2,
+      company: "University of Calgary",
+      position: "Research Assistant",
+      duration: "September 2022 - April 2023",
+      responsibilities: [
+        "Assisted in developing algorithms for data analysis using Python and scikit-learn",
+        "Created visualizations and reports to communicate research findings",
+        "Collaborated with faculty members on research publications",
+        "Maintained and organized research data for easy access and reference"
+      ]
+    }
   ];
 
   return (
@@ -145,13 +173,14 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="font-heading text-3xl font-bold mb-8">Experience</h2>
           <div className="space-y-8">
-            {[1, 2].map((exp) => (
-              <Card key={exp} className="p-6">
-                <h3 className="font-heading text-xl font-semibold">Company/Organization Name</h3>
-                <p className="text-primary font-medium">Position • Duration</p>
+            {experiences.map((exp) => (
+              <Card key={exp.id} className="p-6">
+                <h3 className="font-heading text-xl font-semibold">{exp.company}</h3>
+                <p className="text-primary font-medium">{exp.position} • {exp.duration}</p>
                 <ul className="mt-4 space-y-2 text-muted-foreground">
-                  <li>• Key achievement or responsibility</li>
-                  <li>• Another key achievement</li>
+                  {exp.responsibilities.map((resp, index) => (
+                    <li key={index}>• {resp}</li>
+                  ))}
                 </ul>
               </Card>
             ))}
