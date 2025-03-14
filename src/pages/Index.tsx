@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import AnimatedBackground from '@/components/AnimatedBackground';
+import AnimatedSection from '@/components/AnimatedSection';
 
 const Index = () => {
   const scrollToContact = (e: React.MouseEvent) => {
@@ -103,17 +104,19 @@ const Index = () => {
       {/* About Section */}
       <section id="about" className="py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="font-heading text-3xl font-bold mb-8">About Me</h2>
+          <AnimatedSection animation="fade-in-up">
+            <h2 className="font-heading text-3xl font-bold mb-8">About Me</h2>
+          </AnimatedSection>
           <div className="grid md:grid-cols-2 gap-8">
-            <div>
+            <AnimatedSection animation="slide-in-left" delay="delay-100">
               <p className="text-lg text-muted-foreground">
                 Hi, I'm Aniruddha Khan, a final-year Computer Science student at the University of Calgary and currently working as a Junior Product Development Intern at Nude Solutions. 
                 I have a passion for software development and enjoy exploring different aspects of the software lifecycle, from design and architecture to deployment and optimization.
                 Beyond coding, I love expressing my creativity through music and art. Whether it's playing the guitar, painting, or experimenting in the kitchen, I enjoy working with my hands and bringing ideas to life.
-                I'm always open to new challenges and opportunities—let’s connect!
+                I'm always open to new challenges and opportunities—let's connect!
               </p>
-            </div>
-            <div>
+            </AnimatedSection>
+            <AnimatedSection animation="slide-in-right" delay="delay-200">
               <h3 className="font-heading text-xl font-semibold mb-4">Skills</h3>
               <div className="flex flex-wrap gap-2">
                 {[
@@ -129,7 +132,7 @@ const Index = () => {
                   </span>
                 ))}
               </div>
-            </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -137,34 +140,42 @@ const Index = () => {
       {/* Projects Section */}
       <section id="projects" className="py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="font-heading text-3xl font-bold mb-8">Featured Projects</h2>
+          <AnimatedSection animation="fade-in-up">
+            <h2 className="font-heading text-3xl font-bold mb-8">Featured Projects</h2>
+          </AnimatedSection>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project) => (
-              <Card key={project.id} className="group hover:shadow-lg transition-all">
-                <div className="p-6">
-                  <h3 className="font-heading text-xl font-semibold mb-2">{project.title}</h3>
-                  <p className="text-muted-foreground mb-4">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech) => (
-                      <span key={tech} className="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">
-                        {tech}
-                      </span>
-                    ))}
+            {projects.map((project, index) => (
+              <AnimatedSection 
+                key={project.id} 
+                animation="fade-in-up" 
+                delay={`delay-${(index + 1) * 100}` as any}
+              >
+                <Card className="group hover:shadow-lg transition-all">
+                  <div className="p-6">
+                    <h3 className="font-heading text-xl font-semibold mb-2">{project.title}</h3>
+                    <p className="text-muted-foreground mb-4">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech) => (
+                        <span key={tech} className="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Button variant="outline" size="sm" onClick={() => window.open(project.githubLink, '_blank')}>
+                        <Github className="h-4 w-4 mr-2" />
+                        Code
+                      </Button>
+                      <Button variant="outline" size="sm" onClick={() => window.open(project.demoLink, '_blank')}>
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        Demo
+                      </Button>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Button variant="outline" size="sm" onClick={() => window.open(project.githubLink, '_blank')}>
-                      <Github className="h-4 w-4 mr-2" />
-                      Code
-                    </Button>
-                    <Button variant="outline" size="sm" onClick={() => window.open(project.demoLink, '_blank')}>
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Demo
-                    </Button>
-                  </div>
-                </div>
-              </Card>
+                </Card>
+              </AnimatedSection>
             ))}
           </div>
         </div>
@@ -173,18 +184,26 @@ const Index = () => {
       {/* Experience Section */}
       <section id="experience" className="py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="font-heading text-3xl font-bold mb-8">Experience</h2>
+          <AnimatedSection animation="fade-in-up">
+            <h2 className="font-heading text-3xl font-bold mb-8">Experience</h2>
+          </AnimatedSection>
           <div className="space-y-8">
-            {experiences.map((exp) => (
-              <Card key={exp.id} className="p-6">
-                <h3 className="font-heading text-xl font-semibold">{exp.company}</h3>
-                <p className="text-primary font-medium">{exp.position} • {exp.duration}</p>
-                <ul className="mt-4 space-y-2 text-muted-foreground">
-                  {exp.responsibilities.map((resp, index) => (
-                    <li key={index}>• {resp}</li>
-                  ))}
-                </ul>
-              </Card>
+            {experiences.map((exp, index) => (
+              <AnimatedSection 
+                key={exp.id} 
+                animation="slide-in-left" 
+                delay={`delay-${(index + 1) * 100}` as any}
+              >
+                <Card className="p-6">
+                  <h3 className="font-heading text-xl font-semibold">{exp.company}</h3>
+                  <p className="text-primary font-medium">{exp.position} • {exp.duration}</p>
+                  <ul className="mt-4 space-y-2 text-muted-foreground">
+                    {exp.responsibilities.map((resp, index) => (
+                      <li key={index}>• {resp}</li>
+                    ))}
+                  </ul>
+                </Card>
+              </AnimatedSection>
             ))}
           </div>
         </div>
@@ -193,31 +212,37 @@ const Index = () => {
       {/* Education Section */}
       <section id="education" className="py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="font-heading text-3xl font-bold mb-8">Education</h2>
-          <Card className="p-6">
-            <h3 className="font-heading text-xl font-semibold">University of Calgary</h3>
-            <p className="text-primary font-medium">Bachelor of Science in Computer Science</p>
-            <p className="text-muted-foreground mt-2">Expected Graduation: 2024</p>
-            <div className="mt-4">
-              <p className="font-medium">Relevant Coursework:</p>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {['Data Structures', 'Algorithms', 'Software Engineering', 'Database Systems'].map((course) => (
-                  <span key={course} className="px-3 py-1 bg-muted rounded-full text-sm">
-                    {course}
-                  </span>
-                ))}
+          <AnimatedSection animation="fade-in-up">
+            <h2 className="font-heading text-3xl font-bold mb-8">Education</h2>
+          </AnimatedSection>
+          <AnimatedSection animation="slide-in-right" delay="delay-200">
+            <Card className="p-6">
+              <h3 className="font-heading text-xl font-semibold">University of Calgary</h3>
+              <p className="text-primary font-medium">Bachelor of Science in Computer Science</p>
+              <p className="text-muted-foreground mt-2">Expected Graduation: 2024</p>
+              <div className="mt-4">
+                <p className="font-medium">Relevant Coursework:</p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {['Data Structures', 'Algorithms', 'Software Engineering', 'Database Systems'].map((course) => (
+                    <span key={course} className="px-3 py-1 bg-muted rounded-full text-sm">
+                      {course}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-          </Card>
+            </Card>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="font-heading text-3xl font-bold mb-8">Get In Touch</h2>
+          <AnimatedSection animation="fade-in-up">
+            <h2 className="font-heading text-3xl font-bold mb-8">Get In Touch</h2>
+          </AnimatedSection>
           <div className="grid md:grid-cols-2 gap-8">
-            <div>
+            <AnimatedSection animation="slide-in-left" delay="delay-100">
               <p className="text-lg text-muted-foreground mb-6">
                 I'm currently looking for new opportunities. Whether you have a question
                 or just want to say hi, feel free to reach out!
@@ -232,20 +257,22 @@ const Index = () => {
                   LinkedIn
                 </Button>
               </div>
-            </div>
-            <div className="flex flex-col gap-4">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="px-4 py-2 rounded-md border bg-background"
-              />
-              <textarea
-                placeholder="Your message"
-                rows={4}
-                className="px-4 py-2 rounded-md border bg-background"
-              />
-              <Button>Send Message</Button>
-            </div>
+            </AnimatedSection>
+            <AnimatedSection animation="slide-in-right" delay="delay-200">
+              <div className="flex flex-col gap-4">
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  className="px-4 py-2 rounded-md border bg-background"
+                />
+                <textarea
+                  placeholder="Your message"
+                  rows={4}
+                  className="px-4 py-2 rounded-md border bg-background"
+                />
+                <Button>Send Message</Button>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
