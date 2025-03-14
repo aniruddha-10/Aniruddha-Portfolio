@@ -1,8 +1,8 @@
-
 import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import AnimatedBackground from '@/components/AnimatedBackground';
 
 const Index = () => {
   const scrollToContact = (e: React.MouseEvent) => {
@@ -72,6 +72,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <AnimatedBackground />
       <Navigation />
 
       {/* Hero Section */}
