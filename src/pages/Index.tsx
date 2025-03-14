@@ -1,4 +1,3 @@
-
 import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
@@ -15,6 +14,33 @@ const Index = () => {
       });
     }
   };
+
+  const projects = [
+    {
+      id: 1,
+      title: "Portfolio Website",
+      description: "A personal portfolio website built with React and Tailwind CSS to showcase my projects and skills.",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui"],
+      githubLink: "https://github.com/your-username/portfolio",
+      demoLink: "https://your-portfolio-url.com",
+    },
+    {
+      id: 2,
+      title: "Task Management App",
+      description: "A full-stack application for managing tasks with user authentication and real-time updates.",
+      technologies: ["React", "Node.js", "Express", "MongoDB"],
+      githubLink: "https://github.com/your-username/task-manager",
+      demoLink: "https://your-task-app-url.com",
+    },
+    {
+      id: 3,
+      title: "E-commerce Platform",
+      description: "An e-commerce website with product listings, shopping cart, and payment integration.",
+      technologies: ["React", "Firebase", "Stripe API", "Redux"],
+      githubLink: "https://github.com/your-username/ecommerce",
+      demoLink: "https://your-ecommerce-url.com",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -83,19 +109,26 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="font-heading text-3xl font-bold mb-8">Featured Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((project) => (
-              <Card key={project} className="group hover:shadow-lg transition-all">
+            {projects.map((project) => (
+              <Card key={project.id} className="group hover:shadow-lg transition-all">
                 <div className="p-6">
-                  <h3 className="font-heading text-xl font-semibold mb-2">Project {project}</h3>
+                  <h3 className="font-heading text-xl font-semibold mb-2">{project.title}</h3>
                   <p className="text-muted-foreground mb-4">
-                    Brief description of your project. What it does and the technologies used.
+                    {project.description}
                   </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech) => (
+                      <span key={tech} className="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                   <div className="flex items-center gap-2">
-                    <Button variant="outline" size="sm">
+                    <Button variant="outline" size="sm" onClick={() => window.open(project.githubLink, '_blank')}>
                       <Github className="h-4 w-4 mr-2" />
                       Code
                     </Button>
-                    <Button variant="outline" size="sm">
+                    <Button variant="outline" size="sm" onClick={() => window.open(project.demoLink, '_blank')}>
                       <ExternalLink className="h-4 w-4 mr-2" />
                       Demo
                     </Button>
