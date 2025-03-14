@@ -92,7 +92,7 @@ const Index = () => {
                 <Mail className="mr-2 h-4 w-4" />
                 Contact Me
               </Button>
-              <Button variant="outline" onClick={() => window.open('https://github.com/your-username', '_blank')}>
+              <Button variant="outline" onClick={() => window.open('https://github.com/aniruddha-10', '_blank')}>
                 <Github className="mr-2 h-4 w-4" />
                 GitHub
               </Button>
@@ -110,7 +110,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <AnimatedSection animation="slide-in-left" delay="delay-100">
               <p className="text-lg text-muted-foreground">
-                Hi, I'm Aniruddha Khan, a final-year Computer Science student at the University of Calgary and currently working as a Junior Product Development Intern at Nude Solutions. 
+                Hi, I'm Aniruddha, a final-year Computer Science student at the University of Calgary and currently working as a Junior Product Development Intern at Nude Solutions. 
                 I have a passion for software development and enjoy exploring different aspects of the software lifecycle, from design and architecture to deployment and optimization.
                 Beyond coding, I love expressing my creativity through music and art. Whether it's playing the guitar, painting, or experimenting in the kitchen, I enjoy working with my hands and bringing ideas to life.
                 I'm always open to new challenges and opportunities—let's connect!
@@ -219,11 +219,16 @@ const Index = () => {
             <Card className="p-6">
               <h3 className="font-heading text-xl font-semibold">University of Calgary</h3>
               <p className="text-primary font-medium">Bachelor of Science in Computer Science</p>
-              <p className="text-muted-foreground mt-2">Expected Graduation: 2024</p>
+              <p className="text-muted-foreground mt-2">Expected Graduation: 2027</p>
               <div className="mt-4">
                 <p className="font-medium">Relevant Coursework:</p>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  {['Data Structures', 'Algorithms', 'Software Engineering', 'Database Systems'].map((course) => (
+                  {['Data Structures', 
+                  'Algorithms', 'Software Engineering', 
+                  'Database Systems','Computer Networks', 
+                  'Design and Analysis of Algorithms', 
+                  'Operating Systems', 'Computing Machinery', 
+                  'Information and Security', 'Theoritical Computer Science'].map((course) => (
                     <span key={course} className="px-3 py-1 bg-muted rounded-full text-sm">
                       {course}
                     </span>
@@ -248,11 +253,11 @@ const Index = () => {
                 or just want to say hi, feel free to reach out!
               </p>
               <div className="flex gap-4">
-                <Button onClick={() => window.location.href = 'mailto:your-email@example.com'}>
+                <Button onClick={() => window.location.href = 'mailto:aniruddhakhan747@gmail.com'}>
                   <Mail className="mr-2 h-4 w-4" />
                   Email Me
                 </Button>
-                <Button variant="outline" onClick={() => window.open('https://linkedin.com/in/your-profile', '_blank')}>
+                <Button variant="outline" onClick={() => window.open('https://www.linkedin.com/in/aniruddha-khan-4b052121a/', '_blank')}>
                   <Linkedin className="mr-2 h-4 w-4" />
                   LinkedIn
                 </Button>
@@ -280,7 +285,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-8 border-t">
         <div className="max-w-7xl mx-auto px-4 text-center text-muted-foreground">
-          <p>© 2024 Your Name. All rights reserved.</p>
+          <p>© 2024 Aniruddha. All rights reserved.</p>
         </div>
       </footer>
     </div>
