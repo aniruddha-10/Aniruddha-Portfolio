@@ -60,6 +60,7 @@
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
     overflow-x: hidden;
+    position: relative; /* Added to ensure proper positioning of the canvas */
   }
 }
 
@@ -82,7 +83,12 @@
 .particle {
   position: absolute;
   border-radius: 50%;
-  opacity: 0.5;
+  opacity: 0.8; /* Increased opacity */
   pointer-events: none;
+  filter: blur(1px); /* Added slight blur effect */
 }
 
+/* Add a gradient background to enhance the particle effect */
+.particle-container {
+  background: linear-gradient(135deg, rgba(40, 10, 60, 0.05) 0%, rgba(142, 81, 199, 0.05) 100%);
+}

@@ -1,3 +1,4 @@
+
 import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
@@ -71,7 +72,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background particle-container">
       <AnimatedBackground />
       <Navigation />
 

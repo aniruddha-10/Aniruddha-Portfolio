@@ -32,10 +32,10 @@ const AnimatedBackground = () => {
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 3 + 1;
-        this.speedX = Math.random() * 0.5 - 0.25;
-        this.speedY = Math.random() * 0.5 - 0.25;
-        this.color = `rgba(142, 81, 199, ${Math.random() * 0.3 + 0.1})`; // Purple with varying opacity
+        this.size = Math.random() * 4 + 1; // Increased size
+        this.speedX = Math.random() * 0.6 - 0.3; // Increased speed
+        this.speedY = Math.random() * 0.6 - 0.3; // Increased speed
+        this.color = `rgba(142, 81, 199, ${Math.random() * 0.5 + 0.2})`; // Increased opacity
       }
 
       update() {
@@ -58,7 +58,7 @@ const AnimatedBackground = () => {
     }
 
     const particlesArray: Particle[] = [];
-    const particleCount = Math.min(150, (canvas.width * canvas.height) / 10000);
+    const particleCount = Math.min(200, (canvas.width * canvas.height) / 8000); // Increased particle count
 
     for (let i = 0; i < particleCount; i++) {
       particlesArray.push(new Particle());
@@ -78,10 +78,10 @@ const AnimatedBackground = () => {
           const dy = particlesArray[i].y - particlesArray[j].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           
-          if (distance < 100) {
+          if (distance < 120) { // Increased connection distance
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(142, 81, 199, ${0.1 * (1 - distance / 100)})`;
-            ctx.lineWidth = 0.5;
+            ctx.strokeStyle = `rgba(142, 81, 199, ${0.15 * (1 - distance / 120)})`; // Increased line opacity
+            ctx.lineWidth = 0.8; // Increased line width
             ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
             ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
             ctx.stroke();
@@ -102,7 +102,7 @@ const AnimatedBackground = () => {
   return (
     <canvas 
       ref={canvasRef} 
-      className="fixed top-0 left-0 w-full h-full -z-10 opacity-60"
+      className="fixed top-0 left-0 w-full h-full -z-10 opacity-80" // Increased opacity
     />
   );
 };
