@@ -50,7 +50,7 @@ const Index = () => {
       id: 1,
       company: "Nude Solutions",
       position: "Junior Product Development Intern",
-      duration: "May 2023 - Present",
+      duration: "Jan 2025 - Present",
       responsibilities: [
         "Developed and maintained responsive web applications using React, TypeScript, and Laravel",
         "Collaborated with cross-functional teams to implement new features and fix bugs",
@@ -60,14 +60,16 @@ const Index = () => {
     },
     {
       id: 2,
-      company: "University of Calgary",
-      position: "Research Assistant",
-      duration: "September 2022 - April 2023",
+      company: "Carasti",
+      position: "Software Engineering Intern",
+      duration: "July 2024 - August 2024",
       responsibilities: [
-        "Assisted in developing algorithms for data analysis using Python and scikit-learn",
-        "Created visualizations and reports to communicate research findings",
-        "Collaborated with faculty members on research publications",
-        "Maintained and organized research data for easy access and reference"
+        "Contributed to the development of Carasti’s mobile app using Flutter, focusing on UI/UX improvements.",
+        "Played a key role in maintaining backend systems with Laravel, ensuring seamless app integration.",
+        "Developed and integrated RESTful APIs to enhance communication between mobile and backend services",
+        "Maintained and organized research data for easy access and reference",
+        "Assisted in optimizing MySQL databases, improving data integrity and performance",
+        "Collaborated with senior developers and team members, demonstrating strong teamwork and communication skills."
       ]
     }
   ];
