@@ -42,9 +42,9 @@ const Education = () => {
         </div>
       </section>
 
-      {/* Footer - decreased size */}
-      <footer className="py-4 border-t">
-        <div className="max-w-7xl mx-auto px-4 text-center text-muted-foreground text-sm">
+      {/* Minimized Footer */}
+      <footer className="py-2 border-t border-border/30">
+        <div className="max-w-7xl mx-auto px-4 text-center text-muted-foreground/60 text-xs">
           <p>© 2024 Aniruddha. All rights reserved.</p>
         </div>
       </footer>
