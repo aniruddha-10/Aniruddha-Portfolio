@@ -39,34 +39,6 @@ const Home = () => {
               </Button>
             </div>
           </AnimatedSection>
-          
-          <AnimatedSection animation="fade-in-up" delay="delay-200">
-            <div className="mt-12">
-              <h2 className="font-heading text-3xl font-bold mb-6">Explore My Portfolio</h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <Link to="/about" className="group">
-                  <div className="p-4 rounded-lg border bg-card text-card-foreground hover:bg-primary/10 transition-colors">
-                    <h3 className="text-lg font-semibold group-hover:text-primary">About Me</h3>
-                  </div>
-                </Link>
-                <Link to="/projects" className="group">
-                  <div className="p-4 rounded-lg border bg-card text-card-foreground hover:bg-primary/10 transition-colors">
-                    <h3 className="text-lg font-semibold group-hover:text-primary">Projects</h3>
-                  </div>
-                </Link>
-                <Link to="/experience" className="group">
-                  <div className="p-4 rounded-lg border bg-card text-card-foreground hover:bg-primary/10 transition-colors">
-                    <h3 className="text-lg font-semibold group-hover:text-primary">Experience</h3>
-                  </div>
-                </Link>
-                <Link to="/contact" className="group">
-                  <div className="p-4 rounded-lg border bg-card text-card-foreground hover:bg-primary/10 transition-colors">
-                    <h3 className="text-lg font-semibold group-hover:text-primary">Contact</h3>
-                  </div>
-                </Link>
-              </div>
-            </div>
-          </AnimatedSection>
         </div>
       </section>
 
