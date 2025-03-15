@@ -46,9 +46,9 @@ const About = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-8 border-t">
-        <div className="max-w-7xl mx-auto px-4 text-center text-muted-foreground">
+      {/* Footer - decreased size */}
+      <footer className="py-4 border-t">
+        <div className="max-w-7xl mx-auto px-4 text-center text-muted-foreground text-sm">
           <p>© 2024 Aniruddha. All rights reserved.</p>
         </div>
       </footer>

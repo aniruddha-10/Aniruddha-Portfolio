@@ -10,6 +10,7 @@ const Experience = () => {
     {
       id: 1,
       company: "Nude Solutions",
+      location: "Calgary, Canada",
       position: "Junior Product Development Intern",
       duration: "Jan 2025 - Present",
       responsibilities: [
@@ -22,6 +23,7 @@ const Experience = () => {
     {
       id: 2,
       company: "Carasti",
+      location: "Dubai, UAE",
       position: "Software Engineering Intern",
       duration: "July 2024 - August 2024",
       responsibilities: [
@@ -54,7 +56,10 @@ const Experience = () => {
                 delay={`delay-${(index + 1) * 100}` as any}
               >
                 <Card className="p-6">
-                  <h3 className="font-heading text-xl font-semibold">{exp.company}</h3>
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
+                    <h3 className="font-heading text-xl font-semibold">{exp.company}</h3>
+                    <span className="text-muted-foreground text-sm">{exp.location}</span>
+                  </div>
                   <p className="text-primary font-medium">{exp.position} • {exp.duration}</p>
                   <ul className="mt-4 space-y-2 text-muted-foreground">
                     {exp.responsibilities.map((resp, index) => (
@@ -68,9 +73,9 @@ const Experience = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-8 border-t">
-        <div className="max-w-7xl mx-auto px-4 text-center text-muted-foreground">
+      {/* Footer - decreased size */}
+      <footer className="py-4 border-t">
+        <div className="max-w-7xl mx-auto px-4 text-center text-muted-foreground text-sm">
           <p>© 2024 Aniruddha. All rights reserved.</p>
         </div>
       </footer>
