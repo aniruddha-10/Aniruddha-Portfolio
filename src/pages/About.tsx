@@ -22,6 +22,9 @@ const About = () => {
                 <p className="text-lg text-muted-foreground">
                   Hi, I'm Aniruddha, a final-year Computer Science student at the University of Calgary and currently working as a Junior Product Development Intern at Nude Solutions. 
                   I have a passion for software development and enjoy exploring different aspects of the software lifecycle, from design and architecture to deployment and optimization.
+                </p>
+                <br></br>
+                <p className="text-lg text-muted-foreground">
                   Beyond coding, I love expressing my creativity through music and art. Whether it's playing the guitar, painting, or experimenting in the kitchen, I enjoy working with my hands and bringing ideas to life.
                   I'm always open to new challenges and opportunities—let's connect!
                 </p>
