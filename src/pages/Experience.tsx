@@ -58,7 +58,7 @@ const Experience = () => {
                 <Card className="p-6">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
                     <h3 className="font-heading text-xl font-semibold">{exp.company}</h3>
-                    <span className="text-muted-foreground text-sm">{exp.location}</span>
+                    <span className="text-muted-foreground text-sm font-bold text-purple-700">{exp.location}</span>
                   </div>
                   <p className="text-primary font-medium">{exp.position} • {exp.duration}</p>
                   <ul className="mt-4 space-y-2 text-muted-foreground">

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 
 const AnimatedBackground = () => {
@@ -102,7 +101,9 @@ const AnimatedBackground = () => {
   return (
     <canvas 
       ref={canvasRef} 
-      className="fixed top-0 left-0 w-full h-full -z-10 opacity-80" // Increased opacity
+      className="absolute top-0 left-0 w-full h-full -z-10 opacity-80" // CHANGED: was "fixed top-0 left-0 w-full h-full -z-10 opacity-80"
+      // The key change is replacing "fixed" with "absolute" so the canvas positions relative to its parent container
+      // rather than the viewport, which was causing the footer issue
     />
   );
 };
