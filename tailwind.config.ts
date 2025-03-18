@@ -20,8 +20,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        heading: ['Outfit', 'sans-serif'],
+        sans: ['Poppins', 'Inter', 'sans-serif'],
+        heading: ['Playfair Display', 'Outfit', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",

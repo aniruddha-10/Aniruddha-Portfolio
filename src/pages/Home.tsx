@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import AnimatedSection from '@/components/AnimatedSection';
+import Scene3D from '@/components/Scene3D';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -39,12 +40,17 @@ const Home = () => {
               </Button>
             </div>
           </AnimatedSection>
+          
+          {/* 3D Element */}
+          <AnimatedSection animation="fade-in-up" delay="delay-200">
+            <Scene3D />
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 border-t">
-        <div className="max-w-7xl mx-auto px-4 text-center text-muted-foreground">
+      <footer className="py-4 border-t">
+        <div className="max-w-7xl mx-auto px-4 text-center text-muted-foreground/80 text-sm">
           <p>© 2024 Aniruddha. All rights reserved.</p>
         </div>
       </footer>

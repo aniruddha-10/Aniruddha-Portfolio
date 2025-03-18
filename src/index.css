@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -60,7 +59,10 @@
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
     overflow-x: hidden;
-    position: relative; /* Added to ensure proper positioning of the canvas */
+    position: relative;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
   }
 }
 
@@ -163,12 +165,11 @@
 .particle {
   position: absolute;
   border-radius: 50%;
-  opacity: 0.8; /* Increased opacity */
+  opacity: 0.8;
   pointer-events: none;
-  filter: blur(1px); /* Added slight blur effect */
+  filter: blur(1px);
 }
 
-/* Add a gradient background to enhance the particle effect */
 .particle-container {
   background: linear-gradient(135deg, rgba(40, 10, 60, 0.05) 0%, rgba(142, 81, 199, 0.05) 100%);
 }

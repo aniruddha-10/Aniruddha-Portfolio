@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import AnimatedSection from '@/components/AnimatedSection';
@@ -11,7 +12,7 @@ const About = () => {
       <div className="flex-grow z-10 flex flex-col">
         <Navigation />
         
-        {/* About Section - Added flex classes to center content */}
+        {/* About Section */}
         <section id="about" className="flex-grow flex items-center justify-center py-16">
           <div className="max-w-7xl mx-auto px-4 w-full">
             <AnimatedSection animation="fade-in-up">
@@ -51,11 +52,12 @@ const About = () => {
         </section>
       </div>
       
-      {/* <footer className="py-2 border-t border-border/30 bg-background z-10">
+      {/* Smaller footer */}
+      <footer className="py-3 border-t border-border/30">
         <div className="max-w-7xl mx-auto px-4 text-center text-muted-foreground/60 text-xs">
           <p>© 2024 Aniruddha. All rights reserved.</p>
         </div>
-      </footer> */}
+      </footer>
     </div>
   );
 };
