@@ -83,7 +83,7 @@ const Particles = () => {
 
 const Scene3D: React.FC = () => {
   return (
-    <div className="h-[500px] w-full max-w-[800px] mx-auto mt-8 rounded-lg overflow-hidden shadow-lg">
+    <div className="h-[500px] w-full max-w-[800px] mx-auto mt-8">
       <Canvas camera={{ position: [0, 0, 10], fov: 45 }}>
         <color attach="background" args={['#10011b']} />
         <ambientLight intensity={0.2} />
