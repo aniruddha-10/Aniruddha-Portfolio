@@ -1,7 +1,7 @@
 
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, useGLTF, Environment, Float, Text } from '@react-three/drei';
+import { OrbitControls, Environment, Float, Text } from '@react-three/drei';
 import * as THREE from 'three';
 
 const PyramidModel = () => {
@@ -84,8 +84,8 @@ const Particles = () => {
 const Scene3D: React.FC = () => {
   return (
     <div className="h-[500px] w-full max-w-[800px] mx-auto mt-8">
-      <Canvas camera={{ position: [0, 0, 10], fov: 45 }}>
-        <color attach="background" args={['#10011b']} />
+      <Canvas camera={{ position: [0, 0, 10], fov: 45 }} className="!bg-transparent">
+        <color attach="background" args={['#00000000']} />
         <ambientLight intensity={0.2} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={0.8} />
         <pointLight position={[-10, -10, -10]} color="#D946EF" intensity={1} />
