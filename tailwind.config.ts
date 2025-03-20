@@ -77,6 +77,12 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-soft': 'linear-gradient(to right, #D3E4FD, #F2FCE2)',
+        'gradient-purple': 'linear-gradient(135deg, #E5DEFF 0%, #D6BCFA 100%)',
+        'gradient-blue': 'linear-gradient(135deg, #D3E4FD 0%, #33C3F0 100%)',
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
